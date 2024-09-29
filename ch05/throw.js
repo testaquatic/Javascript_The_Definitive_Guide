@@ -12,3 +12,12 @@ function factorial(x) {
 }
 
 factorial(4);
+
+try {
+    // 사용자에게 숫자 입력을 요구한다.
+    let n = Number(prompt("Please enter a positive integer", ""));
+    let f = factorial(n);
+    alert(n + " != " + f);
+} catch(ex) {
+    alert(ex);
+}
