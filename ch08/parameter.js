@@ -8,3 +8,4 @@ function getPropertyNames(o, a = []) {
 let o = {x: 1}, p = {y: 2, z: 3};
 let a = getPropertyNames(o);
 getPropertyNames(p, a);
+
