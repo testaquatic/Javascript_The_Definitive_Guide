@@ -1,7 +1,7 @@
 class KDate {
     constructor(date) {
         this.Date = new Date(
-            (date? new Date(date): new Date()).valueOf() + 9 * 60 * 60 * 1000
+            (date ? new Date(date) : new Date()).valueOf() + 9 * 60 * 60 * 1000
         );
     }
 
