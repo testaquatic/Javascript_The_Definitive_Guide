@@ -15,18 +15,9 @@ class Range {
         return `{ x | ${this.#from} <= x <= ${this.#to}}`
     }
 
-    [Symbol.iterator]() {
-        let next = Math.ceil(this.#from);
-        let last = this.#to;
-
-        return {
-            next() {
-                return (next <= last) ? {value: next++} : { done: true }
-            },
-
-            [Symbol.iterator]() {
-                return this;
-            }
+    *[Symbol.iterator]() {
+        for (let x = Math.ceil(this.from); x <= this.to; x++) {
+            yield x;
         }
     }
 }
