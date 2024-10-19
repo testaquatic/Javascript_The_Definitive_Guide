@@ -12,7 +12,7 @@ class Range {
     }
 
     toString() {
-        return `{ x | ${this.#from} <= x <= ${this.#to}}`
+        return `{ x | ${this.#from} <= x <= ${this.#to}}`;
     }
 
     *[Symbol.iterator]() {
@@ -40,14 +40,14 @@ function map(iterable, f) {
                 return v;
             } else {
                 return {
-                    value: f(v.value)
+                    value: f(v.value),
                 };
             }
-        }
+        },
     };
 }
 
-[...map(new Range(1, 4), x => x * x)]
+[...map(new Range(1, 4), (x) => x * x)];
 
 function filter(iterable, predicate) {
     let iterator = iterable[Symbol.iterator]();
@@ -57,14 +57,14 @@ function filter(iterable, predicate) {
         },
 
         next() {
-            for(;;) {
+            for (;;) {
                 let v = iterator.next();
                 if (v.done || predicate(v.value)) {
                     return v;
                 }
             }
-        }
-    }
+        },
+    };
 }
 
-[...filter(new Range(1,10), x => x % 2 === 0)];
+[...filter(new Range(1, 10), (x) => x % 2 === 0)];

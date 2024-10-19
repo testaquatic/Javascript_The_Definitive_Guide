@@ -13,14 +13,14 @@ function words(s) {
                 let match = r.exec(s);
                 if (match) {
                     return {
-                        value: s.substring(start, match.index)
+                        value: s.substring(start, match.index),
                     };
                 }
             }
             return {
-                done: true
+                done: true,
             };
-        }
+        },
     };
 }
 

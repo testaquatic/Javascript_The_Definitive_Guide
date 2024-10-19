@@ -34,7 +34,7 @@ function* fibonacciSequence() {
 function fibonacci(n) {
     for (let f of fibonacciSequence()) {
         if (n-- <= 0) {
-            return f
+            return f;
         }
     }
 }
@@ -55,7 +55,7 @@ function* take(n, iterable) {
 [...take(5, fibonacciSequence())];
 
 function* zip(...iterables) {
-    let iterators = iterables.map(i => i[Symbol.iterator]());
+    let iterators = iterables.map((i) => i[Symbol.iterator]());
     let index = 0;
     while (iterators.length > 0) {
         if (index >= iterators.length) {
